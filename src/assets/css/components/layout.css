@@ -1,0 +1,15 @@
+.route-link {
+    color: white !important;
+    padding-left:40px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.route-links {
+    margin: auto;
+    padding: 0px 5px;
+}
+
+.title {
+    margin: auto;
+}

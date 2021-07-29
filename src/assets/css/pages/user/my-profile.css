@@ -1,0 +1,10 @@
+.card {
+    margin-top: 70px;
+  }
+ .edit-profile {
+   float: right;
+ } 
+ .edit {
+   color: black;
+   text-decoration: none;
+ }

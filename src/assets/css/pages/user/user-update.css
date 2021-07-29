@@ -1,0 +1,14 @@
+.card {
+    margin-top: 70px;
+  }
+img {
+  max-width: 300px;
+  max-height: 300px;
+}
+.links{
+  color:white;
+  text-decoration:none
+}
+.change_link{
+  text-decoration:none
+}
