@@ -89,20 +89,18 @@ export default {
             })
         },
         /**
-         * This is to filter posts of datatable.
+         * This is to filter users of datatable.
          * @returns void
          */
         filterUsers() {
             this.showList = this.userList.filter((user) => {
+                // alert(user.created_at).format('YYYY-MM-DD')
+                // alert(user.created_at, 'YYYY-MM-DD'); 
                 return (
-                    user.name.includes(this.keyword) ||
-                    user.email.includes(this.keyword) ||
-                    // user.created_user_id.includes(this.keyword) ||
-                    user.phone.includes(this.keyword) ||
-                    user.dob.includes(this.keyword) ||
-                    user.address.includes(this.keyword) ||
-                    user.created_at.includes(this.keyword) ||
-                    user.updated_at.includes(this.keyword)
+                    user.name.includes(this.name_search) ||
+                    user.email.includes(this.email_search) ||
+                    (user.created_at, 'YYYY-MM-DD').includes(this.from_search) ||
+                    (user.created_at, 'YYYY-MM-DD').includes(this.to_search)
                 );
             });
         },
@@ -124,26 +122,7 @@ export default {
             this.$axios
                 .delete("/api/users/" + item.id)
                 .then(() => {
-                    // console.log(response);
                     this.findUser();
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-        },
-        findUser() {
-            this.$axios
-            .get("/api/users_search", {
-                    params: {
-                        'name': this.name,
-                        'email': this.email,
-                        'start_date': this.createFrom,
-                        'end_date': this.createTo,
-                    }
-                })
-                .then((response) => {
-                    this.userList = response.data;
-                    this.showList = this.userList;
                 })
                 .catch((err) => {
                     console.log(err);

@@ -50,12 +50,9 @@ export default {
             ],
             postList: [],
             showList: [],
-            title: '',
-            description: '',
             status: '',
             search_data: '',
             modalShow: false,
-            // open: false
         };
     },
     computed: {
@@ -116,23 +113,6 @@ export default {
                 .then((response) => {
                     this.postList = response.data;
                     this.showList = this.postList;
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-        },
-        findPost() {
-            alert("herer");
-            this.$axios
-                .get("/api/posts/search", {
-                    params: {
-                        'search_data': this.search_data
-                    }
-                })
-                .then((response) => {
-                    console.log(response.data)
-                    this.postList = response.data;
-                    this.showList = response.data;
                 })
                 .catch((err) => {
                     console.log(err);

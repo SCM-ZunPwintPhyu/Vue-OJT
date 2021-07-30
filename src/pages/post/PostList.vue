@@ -7,15 +7,35 @@
         <v-row class="filter-bar">
           <v-col md="2.5">
             <v-text-field
-              label="Search keyword"
+              label="Search Title"
               hide-details="auto"
               prepend-icon="mdi-magnify"
-              v-model="search_data"
+              v-model="title"
             ></v-text-field>
           </v-col>
-          <v-btn class="post-list-btn mr-4" color="primary" @click="findPost()"
-            ><v-icon left> search </v-icon>{{search}}</v-btn
-          >
+
+           <v-col md="2.5">
+            <v-text-field
+              label="Search Description"
+              hide-details="auto"
+              prepend-icon="mdi-magnify"
+              v-model="description"
+            ></v-text-field>
+          </v-col>
+
+           <v-col md="2.5">
+            <v-text-field
+              label="Search Posted User"
+              hide-details="auto"
+              prepend-icon="mdi-magnify"
+              v-model="created_user_id"
+            ></v-text-field>
+          </v-col>
+
+          <v-btn class="post-list-btn mr-4" color="primary" @click="filterPosts()"
+            ><v-icon left> search </v-icon>{{search}}</v-btn>
+
+
           <v-btn
             class="post-list-btn mr-4"
             color="warning"
@@ -59,7 +79,6 @@
                     </v-card-title>
 
                     <v-card-text>
-                        <p>{{id}}</p>
                         <p>ID : {{ item.id }}</p>
                         <p>Title : {{ item.title }}</p>
                         <p>Description : {{ item.description }}</p>

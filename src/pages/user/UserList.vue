@@ -6,21 +6,21 @@
         <v-col md="2.5">
           <v-text-field
             label="Name"
-            v-model="name"
+            v-model="name_search"
             hide-details="auto"
           ></v-text-field>
         </v-col>
         <v-col md="2.5">
           <v-text-field
             label="Email"
-            v-model="email"
+            v-model="email_search"
             hide-details="auto"
           ></v-text-field>
         </v-col>
         <v-col md="2.5">
           <v-text-field
             label="Created From"
-            v-model="createFrom"
+            v-model="from_search"
             type="date"
             hide-details="auto"
           ></v-text-field>
@@ -28,12 +28,12 @@
         <v-col md="2.5">
           <v-text-field
             label="Created To"
-            v-model="createTo"
+            v-model="to_search"
             type="date"
             hide-details="auto"
           ></v-text-field>
         </v-col>
-        <v-btn class="post-list-btn mr-4" color="primary" @click="findUser()">
+        <v-btn class="post-list-btn mr-4" color="primary" @click="filterUsers()">
           <v-icon left> search </v-icon>
           {{search}}</v-btn
         >
